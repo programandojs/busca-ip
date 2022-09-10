@@ -12,7 +12,7 @@ function visitou() {
     visitou();
 function pegaIp() {
 
-    let url = `https://ip-api.com/json/?fields=status,message,country,countryCode,region,regionName,city,district,zip,lat,lon,timezone,offset,currency,isp,org,as,asname,reverse,mobile,proxy,hosting,query`
+    let url = `http://ip-api.com/json/?fields=status,message,country,countryCode,region,regionName,city,district,zip,lat,lon,timezone,offset,currency,isp,org,as,asname,reverse,mobile,proxy,hosting,query`
     let informando = document.querySelector("#informa");
     let informa = "";
 
@@ -44,7 +44,7 @@ function buscaIp() {
     let informa = "";
     pesquisa.addEventListener("click", () => {
         if (ip.value.trim() !== "") {
-            let url = `https://ip-api.com/json/${ip.value}`;
+            let url = `http://ip-api.com/json/${ip.value}`;
             fetch(url).then((res) => {
                 return res.json();
             }).then((data) => {
