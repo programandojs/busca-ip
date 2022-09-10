@@ -12,7 +12,7 @@ function visitou() {
     visitou();
 function pegaIp() {
 
-    let url = `http://ip-api.com/json/?fields=status,message,country,countryCode,region,regionName,city,district,zip,lat,lon,timezone,offset,currency,isp,org,as,asname,reverse,mobile,proxy,hosting,query`
+    let url = `http://ip-api.com/json/?`
     let informando = document.querySelector("#informa");
     let informa = "";
 
@@ -22,12 +22,10 @@ function pegaIp() {
         informa += `
         <h3>Dados Do Meu IP </h3>
         <p> Meu IP: ${data.query}</p> <hr>
-        <p>IP Reverse: ${data.reverse}</p><hr>
         <p>PAIS: ${data.country}</p><hr>
         <p>ESTADO: ${data.regionName}</p><hr>
         <p>CIDADE: ${data.city}</p><hr>
-        <p>PROVEDOR: ${data.org}</p><hr>
-        <p>VPN-STATUS: ${data.proxy ? '<span style="color:green;">ATIVA</span>' : '<span style="color:red;">INATIVA</span>'}</p><hr> 
+        <p>PROVEDOR: ${data.org}</p><hr> 
         <p>MEU DISPOSITIVO: ${navigator.userAgent}</p> 
         `
         informando.innerHTML = informa;
