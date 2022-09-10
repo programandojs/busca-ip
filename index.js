@@ -9,16 +9,14 @@ function visitou() {
     }
     vil.innerHTML = `<p>Visitas: ${localStorage.visitas}</p>`
 }
-
-window.addEventListener("load", () => {
     visitou();
-})
 function pegaIp() {
 
-    let url = `http://ip-api.com/json/?fields=status,message,country,countryCode,region,regionName,city,district,zip,lat,lon,timezone,offset,currency,isp,org,as,asname,reverse,mobile,proxy,hosting,query`
+    let url = `http://ip-api.com/json/`
     let informando = document.querySelector("#informa");
     let informa = "";
-    fetch(url).then((res) => {
+
+   fetch(url).then((res) => {
         return res.json()
     }).then((data) => {
         informa += `
@@ -33,10 +31,11 @@ function pegaIp() {
         <p>MEU DISPOSITIVO: ${navigator.userAgent}</p> 
         `
         informando.innerHTML = informa;
-    })
+    });
 }
 
 pegaIp();
+
 
 function buscaIp() {
     let ip = document.querySelector("#ip");
